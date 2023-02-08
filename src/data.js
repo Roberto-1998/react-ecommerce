@@ -105,3 +105,10 @@ export const footerList = [
     text: "Temrs",
   },
 ];
+
+export const filterProducts = {
+  color: ["White", "Red", "Blue", "Yellow", "Green"],
+  size: ["XS", "S", "M", "L", "XL"],
+};
+
+export const sortProducts = ["Newest", "Price asc", "Price desc"];
