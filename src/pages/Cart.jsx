@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import { Add, Announcement, Remove } from "@material-ui/icons";
+import { Add, Remove } from "@material-ui/icons";
+import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
-  padding: 20px;
+  padding: 20px 30px;
 `;
 
 const Title = styled.h1`
@@ -59,7 +60,7 @@ const ProductDetails = styled.div`
 `;
 
 const Image = styled.img`
-  width: 200px;
+  width: 150px;
 `;
 
 const Details = styled.div`
