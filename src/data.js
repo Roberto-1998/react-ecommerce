@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     title: "SHIRT STYLE!",
+    cat: "woman",
   },
   {
     id: 2,
     img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     title: "LOUNGEWEAR LOVE",
+    cat: "coat",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     title: "LIGHT JACKETS",
+    cat: "jeans",
   },
 ];
 
@@ -107,8 +110,123 @@ export const footerList = [
 ];
 
 export const filterProducts = {
-  color: ["White", "Red", "Blue", "Yellow", "Green"],
+  color: ["white", "red", "blue", "yellow", "green"],
   size: ["XS", "S", "M", "L", "XL"],
 };
 
-export const sortProducts = ["Newest", "Price asc", "Price desc"];
+export const sortProducts = [
+  {
+    id: 1,
+    text: "Newest",
+    value: "newest",
+  },
+  {
+    id: 2,
+    text: "Price asc",
+    value: "asc",
+  },
+  {
+    id: 3,
+    text: "Price des",
+    value: "desc",
+  },
+];
+
+export const products = [
+  {
+    id: 1,
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+    size: ["XL", "M", "L"],
+    color: ["red"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 2,
+    quantity: 5,
+  },
+  {
+    id: 2,
+    img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    size: ["L", "S"],
+    color: ["blue"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+  },
+  {
+    id: 3,
+    img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+    size: ["M", "L"],
+    color: ["blue"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+  },
+  {
+    id: 4,
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    size: ["XL"],
+    color: ["red"],
+    cat: ["woman"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+  },
+  {
+    id: 5,
+    img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    size: ["XL"],
+    color: ["red"],
+    cat: ["jeans"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+  },
+  {
+    id: 6,
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    size: ["L"],
+    color: ["yellow"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+  },
+  {
+    id: 7,
+    img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+    size: ["XL", "M"],
+    color: ["green"],
+    cat: ["woman"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+  },
+  {
+    id: 8,
+    img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+    size: ["XL", "M", "L"],
+    color: ["white"],
+    cat: ["jeans"],
+    title: "Bici",
+    desc: "Lo último del mercado la verdad",
+    price: 100,
+    quantity: 5,
+  },
+];
+
+export const users = [
+  {
+    id: 1,
+    username: "robe1998",
+    password: "password",
+  },
+];

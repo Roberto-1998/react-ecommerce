@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { popularProducts } from "../data";
 import ProductItem from "./ProductItem";
+import { filteredProducts } from "../utils/filteredProducts";
 
 const Container = styled.div`
   padding: 20px;
@@ -11,12 +11,29 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Products = () => {
+const Title = styled.h1`
+  text-align: center;
+`;
+
+const Products = ({ cat, filters, sort }) => {
+  const [products, setFilteredProducts] = useState([]);
+
+  console.log(filters, cat);
+
+  useEffect(() => {
+    setFilteredProducts(filteredProducts(filters, cat));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cat, filters]);
+
   return (
     <Container>
-      {popularProducts.map((product) => (
-        <ProductItem product={product} key={product.id} />
-      ))}
+      {products.length > 0 ? (
+        products.map((product) => (
+          <ProductItem product={product} key={product.id} />
+        ))
+      ) : (
+        <Title>No products were found</Title>
+      )}
     </Container>
   );
 };

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginError, loginSuccess } from "../redux/userRedux";
+import { users } from "../data";
 
 const Container = styled.div`
   width: 100vw;
@@ -58,15 +62,47 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
+const ErrorText = styled.p`
+  color: red;
+`;
+
 const Login = () => {
+  const [userName, setUserName] = useState("");
+  const [password, setPasword] = useState("");
+  const dispatch = useDispatch();
+
+  const error = useSelector((state) => state.user.error);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    let findUser = users.find(
+      (user) => user.username === userName && user.password === password
+    );
+
+    if (findUser) {
+      dispatch(loginSuccess(findUser));
+    } else {
+      dispatch(loginError("Something went wrong..."));
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="Username" />
-          <Input placeholder="Password" />
-          <Button>LOGIN</Button>
+          <Input
+            placeholder="Username"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <Input
+            placeholder="Password"
+            type="password"
+            onChange={(e) => setPasword(e.target.value)}
+          />
+          {error && <ErrorText>{error}</ErrorText>}
+          <Button onClick={handleClick}>LOGIN</Button>
           <Link>DO NOT REMEMBER THE PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>

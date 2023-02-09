@@ -3,9 +3,13 @@ import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import { filterProducts } from "../data";
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
+import { findProductById } from "../utils/findProductById";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
@@ -21,7 +25,7 @@ const ImgContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 70%;
   height: 70vh;
   object-fit: cover;
   ${mobile({
@@ -118,46 +122,71 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const { id } = useParams();
+  const product = findProductById(id);
+  const { img, title, price, desc, color, size, quantity } = product;
+  const [quantityValue, setQuantityValue] = useState(1);
+  const [sizeValue, setSizeValue] = useState(size[0]);
+  const dispatch = useDispatch();
+
+  const handleQuantity = (type) => {
+    if (type === "dec" && quantityValue > 1) {
+      setQuantityValue(quantityValue - 1);
+    }
+
+    if (type === "inc" && quantityValue <= quantity - 1) {
+      setQuantityValue(quantityValue + 1);
+    }
+  };
+
+  const handleClick = () => {
+    dispatch(
+      addProduct({
+        ...product,
+        quantity: quantityValue,
+        color,
+        size: sizeValue,
+      })
+    );
+  };
+
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+          <Image src={img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
-          <Desc>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            iste, ex distinctio earum nisi inventore deserunt sequi suscipit
-            blanditiis optio at corporis voluptatum, adipisci ducimus alias
-            ullam delectus, recusandae natus.
-          </Desc>
-          <Price>$20</Price>
+          <Title>{title}</Title>
+          <Desc>{desc}</Desc>
+          <Price>${price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              {color.map((item) => (
+                <FilterColor key={item} color={item} />
+              ))}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                {filterProducts.size.map((item) => (
-                  <FilterSizeOption key={item}>{item}</FilterSizeOption>
+              <FilterSize onChange={(e) => setSizeValue(e.target.value)}>
+                {size.map((item) => (
+                  <FilterSizeOption key={item} value={item}>
+                    {item}
+                  </FilterSizeOption>
                 ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={() => handleQuantity("dec")} />
+              <Amount>{quantityValue}</Amount>
+              <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

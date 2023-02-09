@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
@@ -7,6 +7,8 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { filterProducts, sortProducts } from "../data";
 import { mobile } from "../responsive";
+import { useParams } from "react-router-dom";
+import { camelCategory } from "../utils/camelCategory";
 
 const Container = styled.div``;
 const Title = styled.h1`
@@ -50,43 +52,54 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+  const { category } = useParams();
+  const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState("newest");
+
+  const handleFilters = (e) => {
+    setFilters({
+      ...filters,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <Container>
       <Navbar />
       <Announcement />
-      <Title>Products</Title>
+      <Title>{camelCategory(category)}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
-          <Select>
-            <Option disabled selected>
-              Color
-            </Option>
+          <Select name="color" onChange={handleFilters}>
+            <Option disabled>Color</Option>
             {filterProducts.color.map((item) => (
-              <Option key={item}>{item}</Option>
+              <Option key={item} value={item}>
+                {item}
+              </Option>
             ))}
           </Select>
-          <Select>
-            <Option disabled selected>
-              Size
-            </Option>
+          <Select name="size" onChange={handleFilters}>
+            <Option disabled>Size</Option>
             {filterProducts.size.map((item) => (
-              <Option key={item}>{item}</Option>
-            ))}
-          </Select>
-        </Filter>
-        <Filter>
-          <FilterText>Sort Products:</FilterText>
-          <Select>
-            {sortProducts.map((item) => (
-              <Option key={item} selected={item === "Newest"}>
+              <Option key={item} value={item}>
                 {item}
               </Option>
             ))}
           </Select>
         </Filter>
+        <Filter>
+          <FilterText>Sort Products:</FilterText>
+          <Select onChange={(e) => setSort(e.target.value)}>
+            {sortProducts.map((item) => (
+              <Option key={item.id} value={item.value}>
+                {item.text}
+              </Option>
+            ))}
+          </Select>
+        </Filter>
       </FilterContainer>
-      <Products />
+      <Products cat={category} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
     </Container>
