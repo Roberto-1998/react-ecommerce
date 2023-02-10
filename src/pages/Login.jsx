@@ -104,7 +104,7 @@ const Login = () => {
           {error && <ErrorText>{error}</ErrorText>}
           <Button onClick={handleClick}>LOGIN</Button>
           <Link>DO NOT REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Link to={"/register"}>CREATE A NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
     </Container>
