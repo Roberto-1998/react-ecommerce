@@ -31,6 +31,14 @@ export const filteredProducts = (filters, cat) => {
     filteredProducts = products.filter((product) => product.cat.includes(cat));
   }
 
+  // Ordenarlos por defecto por fecha
+  filteredProducts = filteredProducts.sort((a, b) => {
+    const date1 = new Date(a.release);
+    const date2 = new Date(b.release);
+
+    return date2 - date1;
+  });
+
   console.log(filteredProducts);
 
   return filteredProducts;

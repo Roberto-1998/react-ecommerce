@@ -47,34 +47,38 @@ export const popularProducts = [
   {
     id: 1,
     img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+    size: ["XL", "M", "L"],
+    color: ["red"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 2,
+    quantity: 5,
+    release: "03/25/2000",
   },
   {
     id: 2,
     img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    size: ["L", "S"],
+    color: ["blue"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 200,
+    quantity: 5,
+    release: "03/25/2021",
   },
   {
     id: 3,
     img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
-  },
-  {
-    id: 4,
-    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
-  },
-  {
-    id: 5,
-    img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
-  },
-  {
-    id: 6,
-    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
-  },
-  {
-    id: 7,
-    img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
-  },
-  {
-    id: 8,
-    img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+    size: ["M", "L"],
+    color: ["blue"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 300,
+    quantity: 5,
+    release: "03/25/2020",
   },
 ];
 
@@ -127,7 +131,7 @@ export const sortProducts = [
   },
   {
     id: 3,
-    text: "Price des",
+    text: "Price desc",
     value: "desc",
   },
 ];
@@ -143,6 +147,7 @@ export const products = [
     desc: "Lo último del mercado la verdad",
     price: 2,
     quantity: 5,
+    release: "03/25/2000",
   },
   {
     id: 2,
@@ -154,6 +159,7 @@ export const products = [
     desc: "Lo último del mercado la verdad",
     price: 200,
     quantity: 5,
+    release: "03/25/2021",
   },
   {
     id: 3,
@@ -163,8 +169,21 @@ export const products = [
     cat: ["coat"],
     title: "Laptop",
     desc: "Lo último del mercado la verdad",
-    price: 200,
+    price: 300,
     quantity: 5,
+    release: "03/25/2020",
+  },
+  {
+    id: 6,
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    size: ["L"],
+    color: ["yellow"],
+    cat: ["coat"],
+    title: "Laptop",
+    desc: "Lo último del mercado la verdad",
+    price: 1000,
+    quantity: 5,
+    release: "03/25/2017",
   },
   {
     id: 4,
@@ -176,6 +195,7 @@ export const products = [
     desc: "Lo último del mercado la verdad",
     price: 200,
     quantity: 5,
+    release: "03/25/2019",
   },
   {
     id: 5,
@@ -187,18 +207,9 @@ export const products = [
     desc: "Lo último del mercado la verdad",
     price: 200,
     quantity: 5,
+    release: "03/25/2018",
   },
-  {
-    id: 6,
-    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
-    size: ["L"],
-    color: ["yellow"],
-    cat: ["coat"],
-    title: "Laptop",
-    desc: "Lo último del mercado la verdad",
-    price: 200,
-    quantity: 5,
-  },
+
   {
     id: 7,
     img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
@@ -209,6 +220,7 @@ export const products = [
     desc: "Lo último del mercado la verdad",
     price: 200,
     quantity: 5,
+    release: "03/25/2016",
   },
   {
     id: 8,
@@ -220,6 +232,7 @@ export const products = [
     desc: "Lo último del mercado la verdad",
     price: 100,
     quantity: 5,
+    release: "03/25/2015",
   },
 ];
 

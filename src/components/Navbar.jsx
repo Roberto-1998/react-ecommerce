@@ -1,10 +1,13 @@
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import { Person, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { Badge } from "@material-ui/core";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link as LinkReact } from "react-router-dom";
+import Menu from "@mui/material/Menu";
+import MenuItemMat from "@mui/material/MenuItem";
+import { logout } from "../redux/userRedux";
 
 const Container = styled.div`
   height: 60px;
@@ -86,8 +89,45 @@ const MenuItem = styled.div`
   })}
 `;
 
+const Link = styled(LinkReact)`
+  text-decoration: none;
+  color: black;
+`;
+
+const UserItem = styled.div`
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+  margin-right: 60px;
+
+  ${mobile({
+    marginRight: "20px",
+  })}
+`;
+
+const UserName = styled.span`
+  margin-left: 10px;
+  font-weight: bold;
+`;
+
 const Navbar = () => {
+  const user = useSelector((state) => state.user.currentUser);
   const quantity = useSelector((state) => state.cart.quantity);
+  const dispatch = useDispatch();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLogut = () => {
+    dispatch(logout());
+    setAnchorEl(null);
+  };
 
   return (
     <Container>
@@ -100,11 +140,46 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>LAMA.</Logo>
+          <Link to={"/"}>
+            <Logo>LAMA.</Logo>
+          </Link>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          {user && (
+            <MenuItem>
+              <UserItem
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                <Person /> <UserName>{user.username}</UserName>
+              </UserItem>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                <MenuItemMat onClick={handleLogut}>Logout</MenuItemMat>
+              </Menu>
+            </MenuItem>
+          )}
+
+          {!user && (
+            <MenuItem>
+              <Link to={"/register"}>REGISTER</Link>
+            </MenuItem>
+          )}
+          {!user && (
+            <MenuItem>
+              <Link to={"/login"}>LOGIN</Link>
+            </MenuItem>
+          )}
           <Link to={"/cart"}>
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">
