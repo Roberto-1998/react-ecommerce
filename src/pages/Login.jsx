@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginError, loginSuccess } from "../redux/userRedux";
 import { users } from "../data";
+import { Link as LinkReact } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -55,11 +56,12 @@ const Button = styled.button`
   margin-bottom: 10px;
 `;
 
-const Link = styled.a`
+const Link = styled(LinkReact)`
   margin: 5px 0;
   font-size: 12px;
   text-decoration: underline;
   cursor: pointer;
+  color: black;
 `;
 
 const ErrorText = styled.p`
