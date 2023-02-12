@@ -27,8 +27,6 @@ import {
   Title,
   Top,
   TopButtom,
-  TopText,
-  TopTexts,
   Wrapper,
 } from "./Cart.styled";
 
@@ -42,11 +40,6 @@ const Cart = () => {
           <Title>YOUR BAG</Title>
           <Top>
             <TopButtom>CONTINUE SHOPPING</TopButtom>
-            <TopTexts>
-              <TopText>Shopping Bag(2)</TopText>
-              <TopText>Your Wishlist (0)</TopText>
-            </TopTexts>
-            <TopButtom type="filled"> CHECKOUT NOW</TopButtom>
           </Top>
           <Bottom>
             <Info>

@@ -24,6 +24,7 @@ export const Top = styled.div`
 
 export const TopButtom = styled.button`
   padding: 10px;
+  margin-bottom: 40px;
   font-weight: 600;
   cursor: pointer;
   border: ${(props) => props.type === "filled" && "none"};

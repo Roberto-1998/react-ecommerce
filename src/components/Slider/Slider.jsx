@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { sliderItems } from "../../data";
 import {
   Arrow,
-  Button,
   Container,
   Desc,
   Image,
@@ -41,7 +40,6 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Desc>{item.desc}</Desc>
-              <Button>SHOW NOW</Button>
             </InfoContainer>
           </Slide>
         ))}

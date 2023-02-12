@@ -47,6 +47,7 @@ export const Slide = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #${(props) => props.bg};
 `;
 
@@ -73,10 +74,4 @@ export const Desc = styled.div`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
-`;
-
-export const Button = styled.button`
-  padding: 10px;
-  background-color: transparent;
-  cursor: pointer;
 `;

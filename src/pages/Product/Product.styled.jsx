@@ -35,6 +35,7 @@ export const Title = styled.h1`
 `;
 export const Desc = styled.p`
   margin: 20px 0;
+  line-height: 1.5;
 `;
 export const Price = styled.span`
   font-weight: 100;
