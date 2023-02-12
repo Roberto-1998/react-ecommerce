@@ -239,7 +239,11 @@ export const products = [
 export const users = [
   {
     id: 1,
-    username: "robe1998",
-    password: "password",
+    name: "Roberto",
+    lastName: "Castellón",
+    email: "rcastellong98@gmail.com",
+    username: "robe",
+    passwordOne: "123",
+    passwordTwo: "123",
   },
 ];

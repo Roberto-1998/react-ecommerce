@@ -1,5 +1,4 @@
 import * as Yup from "yup";
-import { users } from "../data";
 
 export const registerSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -10,16 +9,7 @@ export const registerSchema = Yup.object().shape({
     .required("Email is required")
     .email("Email should be valid"),
 
-  username: Yup.string()
-    .required("Username is required")
-    .test("is-uniqued", "This username is already taken", (value, context) => {
-      let user = users.find((user) => user.username === value);
-
-      if (user) {
-        return false;
-      }
-      return true;
-    }),
+  username: Yup.string().required("Username is required"),
 
   passwordOne: Yup.string().required("Password is required"),
 

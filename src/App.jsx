@@ -1,9 +1,8 @@
-import ProtectedRoute from "./components/ProtectedRoute";
-import Layout from "./pages/Layout";
-import Login from "./pages/Login";
-
-import Register from "./pages/Register";
 import { Routes, Route } from "react-router-dom";
+import { Layout } from "./pages/Layout";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { Register } from "./pages/Register";
+import { Login } from "./pages/Login";
 
 function App() {
   return (

@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { users } from "../data";
 
 const initialState = {
   currentUser: null,
   error: "",
+  allUsers: [...users],
 };
 
 const userSlice = createSlice({
@@ -21,8 +23,24 @@ const userSlice = createSlice({
       state.currentUser = initialState.currentUser;
       state.error = initialState.error;
     },
+    register: (state, action) => {
+      state.currentUser = action.payload;
+      state.error = "";
+      state.allUsers = [
+        ...state.allUsers,
+        { id: state.allUsers.length + 1, ...action.payload },
+      ];
+    },
+    deleteAccount: (state, action) => {
+      let users = state.allUsers.filter(
+        (user) => user.username !== action.payload
+      );
+      state.allUsers = [...users];
+      state.currentUser = null;
+    },
   },
 });
 
-export const { loginSuccess, loginError, logout } = userSlice.actions;
+export const { loginSuccess, loginError, logout, register, deleteAccount } =
+  userSlice.actions;
 export default userSlice.reducer;
