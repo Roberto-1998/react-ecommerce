@@ -1,9 +1,4 @@
-import {
-  Language,
-  Person,
-  Search,
-  ShoppingCartOutlined,
-} from "@material-ui/icons";
+import { Person, Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import { Badge } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +9,7 @@ import {
   Center,
   Container,
   Input,
+  Language,
   Left,
   Link,
   Logo,
