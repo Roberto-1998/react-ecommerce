@@ -1,9 +1,8 @@
 import React from "react";
 import { Add, Remove } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+
 import {
   Bottom,
-  Button,
   Container,
   Details,
   Hr,
@@ -29,6 +28,8 @@ import {
   TopButtom,
   Wrapper,
 } from "./Cart.styled";
+import { Paypal } from "../../components/PaypalButton";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -44,7 +45,7 @@ const Cart = () => {
           <Bottom>
             <Info>
               {cart.products.map((product) => (
-                <Product>
+                <Product key={product.id}>
                   <ProductDetails>
                     <Image src={product.img} />
                     <Details>
@@ -83,19 +84,16 @@ const Cart = () => {
                 <SummaryItemText>Subtotal</SummaryItemText>
                 <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
               </SummaryItems>
-
               <SummaryItems>
                 <SummaryItemText>Estimated Shipping</SummaryItemText>
                 <SummaryItemPrice>$ 5.90</SummaryItemPrice>
               </SummaryItems>
-
               {cart.total > 50 && (
                 <SummaryItems>
                   <SummaryItemText>Shipping Discount</SummaryItemText>
                   <SummaryItemPrice>$ -5.90</SummaryItemPrice>
                 </SummaryItems>
               )}
-
               <SummaryItems type="total">
                 <SummaryItemText>Total</SummaryItemText>
                 <SummaryItemPrice>
@@ -103,7 +101,7 @@ const Cart = () => {
                 </SummaryItemPrice>
               </SummaryItems>
 
-              <Button>CHECKOUT NOW</Button>
+              {/* <Paypal /> */}
             </Summary>
           </Bottom>
         </Wrapper>

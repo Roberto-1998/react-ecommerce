@@ -1,7 +1,7 @@
 import { Add, Remove } from "@material-ui/icons";
 import { findProductById } from "../../utils/findProductById";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { addProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import {
@@ -30,8 +30,9 @@ const Product = () => {
   const product = findProductById(id);
   const { img, title, price, desc, color, size, quantity } = product;
   const [quantityValue, setQuantityValue] = useState(1);
-  const [sizeValue, setSizeValue] = useState(size[0]);
+  const [sizeValue, setSizeValue] = useState("");
   const dispatch = useDispatch();
+  const ref = useRef(null);
 
   const handleQuantity = (type) => {
     if (type === "dec" && quantityValue > 1) {
@@ -44,6 +45,11 @@ const Product = () => {
   };
 
   const handleClick = () => {
+    if (sizeValue === "") {
+      ref.current.focus();
+      return;
+    }
+
     dispatch(
       addProduct({
         ...product,
@@ -73,7 +79,11 @@ const Product = () => {
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize onChange={(e) => setSizeValue(e.target.value)}>
+              <FilterSize
+                onChange={(e) => setSizeValue(e.target.value)}
+                ref={ref}
+              >
+                <FilterSizeOption value="">Select Size</FilterSizeOption>
                 {size.map((item) => (
                   <FilterSizeOption key={item} value={item}>
                     {item}

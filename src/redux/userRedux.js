@@ -38,9 +38,18 @@ const userSlice = createSlice({
       state.allUsers = [...users];
       state.currentUser = null;
     },
+    addOrder: (state, action) => {
+      state.currentUser.orders = [...state.currentUser.orders, action.payload];
+    },
   },
 });
 
-export const { loginSuccess, loginError, logout, register, deleteAccount } =
-  userSlice.actions;
+export const {
+  loginSuccess,
+  loginError,
+  logout,
+  register,
+  deleteAccount,
+  addOrder,
+} = userSlice.actions;
 export default userSlice.reducer;

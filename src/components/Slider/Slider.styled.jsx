@@ -63,6 +63,7 @@ export const Image = styled.img`
 export const InfoContainer = styled.div`
   padding: 50px;
   flex: 1;
+  align-self: center;
 `;
 
 export const Title = styled.h1`
