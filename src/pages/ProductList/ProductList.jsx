@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { filterProducts, sortProducts } from "../../data";
+import { sortProducts } from "../../data";
 import { useParams } from "react-router-dom";
 import { camelCategory } from "../../utils/camelCategory";
 import {
@@ -12,6 +12,8 @@ import {
   Title,
 } from "./ProductList.styled";
 import { Products } from "../../components/Products";
+import { getColors } from "../../utils/getColors";
+import { getSizes } from "../../utils/getSizes";
 
 const ProductList = () => {
   const { category } = useParams();
@@ -32,16 +34,20 @@ const ProductList = () => {
         <Filter>
           <FilterText>Filter Products:</FilterText>
           <Select name="color" onChange={handleFilters}>
-            <Option disabled>Color</Option>
-            {filterProducts.color.map((item) => (
+            <Option value={""} defaultChecked>
+              Choose color
+            </Option>
+            {getColors().map((item) => (
               <Option key={item} value={item}>
                 {item}
               </Option>
             ))}
           </Select>
           <Select name="size" onChange={handleFilters}>
-            <Option disabled>Size</Option>
-            {filterProducts.size.map((item) => (
+            <Option value={""} defaultChecked>
+              Choose size
+            </Option>
+            {getSizes().map((item) => (
               <Option key={item} value={item}>
                 {item}
               </Option>

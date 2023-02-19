@@ -188,7 +188,7 @@ export const products = [
   {
     id: 5,
     img: "https://th.bing.com/th/id/R.4aa43def0bb4399044cd83d4a5fc6342?rik=InezImQtRxf0Xg&pid=ImgRaw&r=0",
-    size: ["M", "L"],
+    size: ["M", "L", "XS"],
     color: ["black"],
     cat: ["jacket"],
     title: "Black Jacket",

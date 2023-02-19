@@ -28,11 +28,12 @@ import {
   TopButtom,
   Wrapper,
 } from "./Cart.styled";
-import { Paypal } from "../../components/PaypalButton";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -40,7 +41,9 @@ const Cart = () => {
         <Wrapper>
           <Title>YOUR BAG</Title>
           <Top>
-            <TopButtom>CONTINUE SHOPPING</TopButtom>
+            <TopButtom onClick={() => navigate(-2)}>
+              CONTINUE SHOPPING
+            </TopButtom>
           </Top>
           <Bottom>
             <Info>
