@@ -37,9 +37,6 @@ const Paypal = ({ amount }) => {
         onApprove={function (data, actions) {
           return actions.order.capture().then(function (details) {
             // Your code here after capture the order
-            alert("Up and running");
-
-            console.log("Estos son los detalles", details);
 
             dispatch(addOrder(details));
             dispatch(emptyCart());

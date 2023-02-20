@@ -2,17 +2,21 @@ import styled from "styled-components";
 import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  background: #d9a7c7; /* fallback for old browsers */
+  background: #0f2027; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #fffcdc,
-    #d9a7c7
+    #2c5364,
+    #203a43,
+    #0f2027
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #fffcdc,
-    #d9a7c7
+    #2c5364,
+    #203a43,
+    #0f2027
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: white;
 
   display: flex;
   margin-top: 70px;

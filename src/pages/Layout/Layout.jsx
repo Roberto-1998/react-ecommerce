@@ -7,19 +7,27 @@ import { ProductList } from "../ProductList";
 import { Product } from "../Product";
 import { Cart } from "../Cart";
 import { Footer } from "../../components/Footer";
+import styled from "styled-components";
+
+const MainContainer = styled.main`
+  min-height: 50vh;
+`;
 
 const Layout = () => {
   return (
     <>
       <Announcement />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:category" element={<ProductList />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <MainContainer>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:category" element={<ProductList />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </MainContainer>
+
       <Footer />
     </>
   );
