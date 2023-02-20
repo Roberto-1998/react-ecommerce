@@ -29,14 +29,24 @@ import {
   TopButtom,
   Wrapper,
 } from "./Cart.styled";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Paypal } from "../../components/Paypal";
+import { addProductAmount, removeProductAmount } from "../../redux/cartRedux";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleAddProduct = (id) => {
+    dispatch(addProductAmount(id));
+  };
+
+  const handleRemoveProduct = (id) => {
+    dispatch(removeProductAmount(id));
+  };
 
   return (
     <Container isEmpty={!cart.products.length > 0}>
@@ -70,9 +80,9 @@ const Cart = () => {
                   </ProductDetails>
                   <PriceDetails>
                     <ProductAmountContainer>
-                      <Add />
+                      <Add onClick={() => handleAddProduct(product.id)} />
                       <ProductAmount>{product.quantity}</ProductAmount>
-                      <Remove />
+                      <Remove onClick={() => handleRemoveProduct(product.id)} />
                     </ProductAmountContainer>
                     <ProductPrice>
                       $ {product.price * product.quantity}
