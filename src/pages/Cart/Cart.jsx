@@ -39,7 +39,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   return (
-    <Container>
+    <Container isEmpty={!cart.products.length > 0}>
       {cart.products.length > 0 ? (
         <Wrapper>
           <Title>YOUR BAG</Title>

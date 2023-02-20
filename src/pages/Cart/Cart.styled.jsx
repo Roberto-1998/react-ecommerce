@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mobile } from "../../responsive";
 
 export const Container = styled.div`
-  height: 55vh;
+  height: ${(props) => (props.isEmpty === true ? "50vh" : "auto")};
 `;
 
 export const Wrapper = styled.div`
