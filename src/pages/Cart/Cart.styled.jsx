@@ -132,7 +132,6 @@ export const Summary = styled.div`
   border: 0.5px solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 50vh;
 `;
 
 export const SummaryTitle = styled.h1`
@@ -157,4 +156,8 @@ export const Button = styled.button`
   background-color: black;
   color: white;
   font-weight: 600;
+`;
+
+export const LoginMessage = styled.p`
+  text-align: center;
 `;

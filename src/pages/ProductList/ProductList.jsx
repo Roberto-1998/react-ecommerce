@@ -14,6 +14,7 @@ import {
 import { Products } from "../../components/Products";
 import { getColors } from "../../utils/getColors";
 import { getSizes } from "../../utils/getSizes";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 const ProductList = () => {
   const { category } = useParams();
@@ -28,45 +29,48 @@ const ProductList = () => {
   };
 
   return (
-    <Container>
-      <Title>{camelCategory(category)}</Title>
-      <FilterContainer>
-        <Filter>
-          <FilterText>Filter Products:</FilterText>
-          <Select name="color" onChange={handleFilters}>
-            <Option value={""} defaultChecked>
-              Choose color
-            </Option>
-            {getColors().map((item) => (
-              <Option key={item} value={item}>
-                {item}
+    <>
+      <Container>
+        <Title>{camelCategory(category)}</Title>
+        <FilterContainer>
+          <Filter>
+            <FilterText>Filter Products:</FilterText>
+            <Select name="color" onChange={handleFilters}>
+              <Option value={""} defaultChecked>
+                Choose color
               </Option>
-            ))}
-          </Select>
-          <Select name="size" onChange={handleFilters}>
-            <Option value={""} defaultChecked>
-              Choose size
-            </Option>
-            {getSizes().map((item) => (
-              <Option key={item} value={item}>
-                {item}
+              {getColors().map((item) => (
+                <Option key={item} value={item}>
+                  {item}
+                </Option>
+              ))}
+            </Select>
+            <Select name="size" onChange={handleFilters}>
+              <Option value={""} defaultChecked>
+                Choose size
               </Option>
-            ))}
-          </Select>
-        </Filter>
-        <Filter>
-          <FilterText>Sort Products:</FilterText>
-          <Select onChange={(e) => setSort(e.target.value)}>
-            {sortProducts.map((item) => (
-              <Option key={item.id} value={item.value}>
-                {item.text}
-              </Option>
-            ))}
-          </Select>
-        </Filter>
-      </FilterContainer>
-      <Products cat={category} filters={filters} sort={sort} />
-    </Container>
+              {getSizes().map((item) => (
+                <Option key={item} value={item}>
+                  {item}
+                </Option>
+              ))}
+            </Select>
+          </Filter>
+          <Filter>
+            <FilterText>Sort Products:</FilterText>
+            <Select onChange={(e) => setSort(e.target.value)}>
+              {sortProducts.map((item) => (
+                <Option key={item.id} value={item.value}>
+                  {item.text}
+                </Option>
+              ))}
+            </Select>
+          </Filter>
+        </FilterContainer>
+        <Products cat={category} filters={filters} sort={sort} />
+      </Container>
+      <Newsletter />
+    </>
   );
 };
 

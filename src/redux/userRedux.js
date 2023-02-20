@@ -12,7 +12,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     loginSuccess: (state, action) => {
-      state.currentUser = action.payload;
+      state.currentUser = { ...action.payload, orders: [] };
       state.error = "";
     },
     loginError: (state, action) => {
@@ -24,7 +24,7 @@ const userSlice = createSlice({
       state.error = initialState.error;
     },
     register: (state, action) => {
-      state.currentUser = action.payload;
+      state.currentUser = { ...action.payload, orders: [] };
       state.error = "";
       state.allUsers = [
         ...state.allUsers,

@@ -8,6 +8,7 @@ import {
   Hr,
   Image,
   Info,
+  LoginMessage,
   PriceDetails,
   Product,
   ProductAmount,
@@ -29,10 +30,12 @@ import {
   Wrapper,
 } from "./Cart.styled";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Paypal } from "../../components/Paypal";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const user = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
 
   return (
@@ -104,7 +107,22 @@ const Cart = () => {
                 </SummaryItemPrice>
               </SummaryItems>
 
-              {/* <Paypal /> */}
+              {user ? (
+                <Paypal
+                  amount={cart.total < 50 ? cart.total + 5.9 : cart.total}
+                />
+              ) : (
+                <LoginMessage>
+                  You should{" "}
+                  <Link to={"/login"}>
+                    {" "}
+                    <strong>
+                      <em>login</em>
+                    </strong>
+                  </Link>{" "}
+                  to proceed with the payment
+                </LoginMessage>
+              )}
             </Summary>
           </Bottom>
         </Wrapper>

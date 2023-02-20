@@ -6,7 +6,6 @@ import { Home } from "../Home";
 import { ProductList } from "../ProductList";
 import { Product } from "../Product";
 import { Cart } from "../Cart";
-import { Newsletter } from "../../components/Newsletter";
 import { Footer } from "../../components/Footer";
 
 const Layout = () => {
@@ -21,7 +20,6 @@ const Layout = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Home />} />
       </Routes>
-      <Newsletter />
       <Footer />
     </>
   );

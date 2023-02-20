@@ -6,4 +6,5 @@ export const Container = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  margin: 50px 0 50px 0;
 `;
