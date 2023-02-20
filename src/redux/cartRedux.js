@@ -12,7 +12,9 @@ const cartSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.quantity += 1;
+
       state.products.push(action.payload);
+
       state.total += action.payload.price * action.payload.quantity;
     },
     emptyCart: (state, _action) => {
@@ -43,6 +45,14 @@ const cartSlice = createSlice({
       ];
       state.quantity -= 1;
       state.total = state.total - product.price;
+      let productUpdated = state.products.find(
+        (prod) => prod.id === action.payload
+      );
+      if (productUpdated.quantity < 1) {
+        state.products = state.products.filter(
+          (prod) => prod.id !== action.payload
+        );
+      }
     },
   },
 });

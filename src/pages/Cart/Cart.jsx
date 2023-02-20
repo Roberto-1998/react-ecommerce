@@ -54,7 +54,7 @@ const Cart = () => {
         <Wrapper>
           <Title>YOUR BAG</Title>
           <Top>
-            <TopButtom onClick={() => navigate(-2)}>
+            <TopButtom onClick={() => navigate("/")}>
               CONTINUE SHOPPING
             </TopButtom>
           </Top>

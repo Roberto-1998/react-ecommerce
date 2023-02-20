@@ -2,8 +2,8 @@ import { Add, Remove } from "@material-ui/icons";
 import { findProductById } from "../../utils/findProductById";
 import { useParams } from "react-router-dom";
 import { useRef, useState } from "react";
-import { addProduct } from "../../redux/cartRedux";
-import { useDispatch } from "react-redux";
+import { addProduct, addProductAmount } from "../../redux/cartRedux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AddContainer,
   Amount,
@@ -26,6 +26,8 @@ import {
 } from "./Product.styled";
 
 const Product = () => {
+  const cart = useSelector((state) => state.cart);
+
   const { id } = useParams();
   const product = findProductById(id);
   const { img, title, price, desc, color, size, quantity } = product;
@@ -50,14 +52,20 @@ const Product = () => {
       return;
     }
 
-    dispatch(
-      addProduct({
-        ...product,
-        quantity: quantityValue,
-        color,
-        size: sizeValue,
-      })
-    );
+    let productExists = cart.products.find((prod) => prod.id === id);
+
+    if (productExists) {
+      dispatch(addProductAmount(id));
+    } else {
+      dispatch(
+        addProduct({
+          ...product,
+          quantity: quantityValue,
+          color,
+          size: sizeValue,
+        })
+      );
+    }
   };
 
   return (
