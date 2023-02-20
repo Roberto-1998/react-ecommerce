@@ -56,7 +56,7 @@ const Navbar = () => {
         </Left>
         <Center>
           <Link to={"/"}>
-            <Logo>LAMA.</Logo>
+            <Logo>DRESS.me</Logo>
           </Link>
         </Center>
         <Right>
