@@ -70,6 +70,10 @@ export const FilterColor = styled.div`
 export const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px red;
+  }
 `;
 export const FilterSizeOption = styled.option``;
 
