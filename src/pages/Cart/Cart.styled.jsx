@@ -60,6 +60,7 @@ export const Info = styled.div`
 
 export const Product = styled.div`
   display: flex;
+  margin-top: 25px;
   justify-content: space-between;
   ${mobile({
     flexDirection: "column",
@@ -72,11 +73,11 @@ export const ProductDetails = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 150px;
+  width: 100px;
 `;
 
 export const Details = styled.div`
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
