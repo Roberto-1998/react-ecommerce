@@ -81,6 +81,7 @@ export const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: 5px;
 `;
 
 export const ProductName = styled.span``;
@@ -111,6 +112,21 @@ export const ProductAmountContainer = styled.div`
 
   svg {
     cursor: pointer;
+    transition: all ease 0.5s;
+  }
+
+  svg:first-child {
+    &:hover {
+      color: green;
+      transform: scale(1.2);
+    }
+  }
+
+  svg:last-child {
+    &:hover {
+      color: red;
+      transform: scale(1.2);
+    }
   }
 `;
 export const ProductAmount = styled.div`
@@ -121,7 +137,7 @@ export const ProductAmount = styled.div`
   })}
 `;
 export const ProductPrice = styled.div`
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 200;
   ${mobile({
     marginBottom: "20px",

@@ -140,7 +140,7 @@ const Cart = () => {
                       <em>login</em>
                     </strong>
                   </Link>{" "}
-                  to proceed with the payment
+                  to proceed with the payment.
                 </LoginMessage>
               )}
             </Summary>
