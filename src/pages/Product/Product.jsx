@@ -46,16 +46,29 @@ const Product = () => {
     }
   };
 
-  const handleClick = () => {
+  const handleClick = (id) => {
     if (sizeValue === "") {
       ref.current.focus();
       return;
     }
 
-    let productExists = cart.products.find((prod) => prod.id === id);
+    console.log(cart);
+
+    let productExists = cart.products.find((prod) => prod.id === Number(id));
 
     if (productExists) {
-      dispatch(addProductAmount(id));
+      if (productExists.size !== sizeValue) {
+        dispatch(
+          addProduct({
+            ...product,
+            quantity: quantityValue,
+            color,
+            size: sizeValue,
+          })
+        );
+      } else {
+        dispatch(addProductAmount({ id: Number(id), quantity: quantityValue }));
+      }
     } else {
       dispatch(
         addProduct({
@@ -106,7 +119,7 @@ const Product = () => {
               <Amount>{quantityValue}</Amount>
               <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button onClick={handleClick}>ADD TO CART</Button>
+            <Button onClick={() => handleClick(id)}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

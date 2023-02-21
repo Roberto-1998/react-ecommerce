@@ -23,11 +23,14 @@ const cartSlice = createSlice({
       state.total = 0;
     },
     addProductAmount: (state, action) => {
-      let product = state.products.find((prod) => prod.id === action.payload);
-      state.products.find((prod) => prod.id === action.payload).quantity += 1;
+      let product = state.products.find(
+        (prod) => prod.id === action.payload.id
+      );
+      state.products.find((prod) => prod.id === action.payload.id).quantity +=
+        action.payload.quantity;
 
-      state.quantity += 1;
-      state.total = state.total + product.price;
+      state.quantity += action.payload.quantity;
+      state.total = state.total + product.price * action.payload.quantity;
     },
     removeProductAmount: (state, action) => {
       let product = state.products.find((prod) => prod.id === action.payload);

@@ -12,20 +12,26 @@ export const Wrapper = styled.div`
 `;
 export const ImgContainer = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 `;
 
 export const Image = styled.img`
-  width: 70%;
+  width: 50%;
+  max-width: 300px;
   height: 70vh;
-  object-fit: cover;
+  object-fit: contain;
   ${mobile({
     height: "40vh",
   })}
 `;
 
 export const InfoContainer = styled.div`
-  flex: 1;
-  padding: 0px 50px;
+  flex: 2;
+
+  padding: 0px 50px 0 50px;
   ${mobile({
     padding: "0 10px",
   })}
@@ -36,6 +42,7 @@ export const Title = styled.h1`
 export const Desc = styled.p`
   margin: 20px 0;
   line-height: 1.5;
+  width: 80%;
 `;
 export const Price = styled.span`
   font-weight: 100;

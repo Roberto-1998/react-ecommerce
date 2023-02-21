@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Add, Remove } from "@material-ui/icons";
 
 import {
@@ -33,19 +33,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Paypal } from "../../components/Paypal";
 import { addProductAmount, removeProductAmount } from "../../redux/cartRedux";
+import { findProductById } from "../../utils/findProductById";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [quantityValue, setQuantityValue] = useState(1);
 
   const handleAddProduct = (id) => {
-    dispatch(addProductAmount(id));
+    let product = findProductById(id);
+
+    if (quantityValue < product.quantity) {
+      setQuantityValue(quantityValue + 1);
+      dispatch(addProductAmount({ id, quantity: 1 }));
+    }
   };
 
   const handleRemoveProduct = (id) => {
     dispatch(removeProductAmount(id));
+    setQuantityValue(quantityValue - 1);
   };
 
   return (
@@ -63,7 +71,9 @@ const Cart = () => {
               {cart.products.map((product) => (
                 <Product key={product.id}>
                   <ProductDetails>
-                    <Image src={product.img} />
+                    <Link to={`/product/${product.id}`}>
+                      <Image src={product.img} />
+                    </Link>
                     <Details>
                       <ProductName>
                         <b>Product:</b> {product.title}
