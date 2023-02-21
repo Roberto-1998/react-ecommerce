@@ -107,6 +107,10 @@ export const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
+  svg {
+    cursor: pointer;
+  }
 `;
 export const ProductAmount = styled.div`
   font-size: 24px;
