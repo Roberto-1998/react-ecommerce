@@ -15,11 +15,13 @@ import { Products } from "../../components/Products";
 import { getColors } from "../../utils/getColors";
 import { getSizes } from "../../utils/getSizes";
 import Newsletter from "../../components/Newsletter/Newsletter";
+import { useTranslation } from "react-i18next";
 
 const ProductList = () => {
   const { category } = useParams();
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
+  const [t] = useTranslation("productList");
 
   const handleFilters = (e) => {
     setFilters({
@@ -31,13 +33,13 @@ const ProductList = () => {
   return (
     <>
       <Container>
-        <Title>{camelCategory(category)}</Title>
+        <Title>{t(`${camelCategory(category)}`)}</Title>
         <FilterContainer>
           <Filter>
-            <FilterText>Filter Products:</FilterText>
+            <FilterText>{t("filter")}:</FilterText>
             <Select name="color" onChange={handleFilters}>
               <Option value={""} defaultChecked>
-                Choose color
+                {t("color")}
               </Option>
               {getColors().map((item) => (
                 <Option key={item} value={item}>
@@ -47,7 +49,7 @@ const ProductList = () => {
             </Select>
             <Select name="size" onChange={handleFilters}>
               <Option value={""} defaultChecked>
-                Choose size
+                {t("size")}
               </Option>
               {getSizes().map((item) => (
                 <Option key={item} value={item}>
@@ -57,7 +59,7 @@ const ProductList = () => {
             </Select>
           </Filter>
           <Filter>
-            <FilterText>Sort Products:</FilterText>
+            <FilterText>{t("sort")}:</FilterText>
             <Select onChange={(e) => setSort(e.target.value)}>
               {sortProducts.map((item) => (
                 <Option key={item.id} value={item.value}>

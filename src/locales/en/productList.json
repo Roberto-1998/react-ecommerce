@@ -1,0 +1,12 @@
+{
+    "filter":"Filter Products",
+    "color":"Choose color",
+    "size":"Choose size",
+    "sort":"Sort Products",
+  
+        "Shirt":"Shirts",
+        "Jackets":"Jackets",
+        "Loungewear":"Loungewears"
+    
+
+}

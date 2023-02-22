@@ -1,0 +1,15 @@
+{
+    
+        "filter":"Filtrar Productos",
+        "color":"Elige un color",
+        "size":"Elige una talla",
+        "sort":"Ordenar Productos",
+       
+            "Shirt":"Camisas",
+            "Jackets":"Chaquetas",
+            "Loungewear":"Ropas de salón"
+        
+    
+    
+    
+}
