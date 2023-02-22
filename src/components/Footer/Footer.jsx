@@ -24,17 +24,16 @@ import {
   SocialIcon,
   Title,
 } from "./Footer.styled";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const [t] = useTranslation("footer");
+
   return (
     <Container>
       <Left>
         <Logo>DRESS.me</Logo>
-        <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alterations in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
-        </Desc>
+        <Desc>{t("leftSide.desc")}</Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
             <Facebook />
@@ -55,17 +54,17 @@ const Footer = () => {
       </Left>
 
       <Center>
-        <Title>Useful Links</Title>
+        <Title>{t("centerSide.linksTitle")}</Title>
 
         <List>
           {footerList.map((item) => (
-            <ListItem key={item.text}>{item.text}</ListItem>
+            <ListItem key={item.text}>{t(`${item.text}`)}</ListItem>
           ))}
         </List>
       </Center>
 
       <Right>
-        <Title>Contact</Title>
+        <Title>{t("rightSide.contact")}</Title>
         <ContactItem>
           <Room style={{ marginRight: "10px" }} /> 622 Dixie Path, SOuth
           Tobinchester 98336

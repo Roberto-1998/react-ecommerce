@@ -10,7 +10,7 @@
             "desc":"DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS."
         },
         "third":{
-            "title":"LONGEWEAR LOVE",
+            "title":"LOUNGEWEAR LOVE",
             "desc":"DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS."
         }
     },
@@ -20,6 +20,12 @@
         "shirt":"SHIRT STYLE!",
         "longewear":"LONGEWEAR LOVE!",
         "jackets":"LIGHT JACKETS"
+    },
+
+    "newsletter":{
+        "title":"Newsletter",
+        "text":"Get timely updates from your favorite products.",
+        "placeholder":"Your email"
     }
 
 

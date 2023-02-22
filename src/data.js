@@ -45,32 +45,19 @@ export const categories = [
 
 export const footerList = [
   {
-    text: "Home",
+    text: "centerSide.home",
   },
   {
-    text: "Cart",
+    text: "centerSide.cart",
   },
   {
-    text: "Man Fashion",
+    text: "centerSide.jackets",
   },
   {
-    text: "Woman Fashion",
+    text: "centerSide.shirts",
   },
   {
-    text: "Accessories",
-  },
-  {
-    text: "My Account",
-  },
-  {
-    text: "Order Tracking",
-  },
-
-  {
-    text: "Wishlist",
-  },
-  {
-    text: "Temrs",
+    text: "centerSide.loungewear",
   },
 ];
 

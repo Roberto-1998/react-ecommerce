@@ -1,0 +1,17 @@
+{
+    "leftSide":{
+        "desc":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alterations in some form, by injected humour, or randomised words which don't look even slightly believable."
+    },
+    "centerSide":{
+        "linksTitle":"Useful Links",
+        "home":"Home",
+        "cart":"Cart",
+        "jackets":"Jackets",
+        "shirts":"Shirts",
+        "loungewear":"Loungewear"
+       
+    },
+    "rightSide":{
+        "contact":"Contact"
+    }
+}
