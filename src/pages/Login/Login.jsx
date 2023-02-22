@@ -13,6 +13,7 @@ import {
   Wrapper,
 } from "./Login.styled";
 import { loginError, loginSuccess } from "../../redux/userRedux";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const {
@@ -22,6 +23,7 @@ const Login = () => {
     reset,
     handleSubmit,
   } = useCreateLoginForm();
+  const [t] = useTranslation("login");
   const dispatch = useDispatch();
   const users = useSelector((state) => state.user.allUsers);
   const error = useSelector((state) => state.user.error);
@@ -47,18 +49,18 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Input placeholder="username" {...register("username")} />
+        <Title>{t("sign")}</Title>
+        <Form onSubmit={handleSubmit(onSubmit)} autoComplete="false">
+          <Input placeholder={t("username")} {...register("username")} />
           <Input
-            placeholder="Password"
+            placeholder={t("password")}
             type="password"
             {...register("passwordOne")}
           />
           {!isValid && <ErrorText>{error}</ErrorText>}
-          <Button type="submit">LOGIN</Button>
-          <Link>DO NOT REMEMBER THE PASSWORD?</Link>
-          <Link to={"/register"}>CREATE A NEW ACCOUNT</Link>
+          <Button type="submit">{t("login")}</Button>
+          <Link>{t("notRemember")}</Link>
+          <Link to={"/register"}>{t("create")}</Link>
         </Form>
       </Wrapper>
     </Container>
