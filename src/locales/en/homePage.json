@@ -13,6 +13,13 @@
             "title":"LONGEWEAR LOVE",
             "desc":"DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS."
         }
+    },
+
+    "categories":{
+        "btn":"SHOP NOW",
+        "shirt":"SHIRT STYLE!",
+        "longewear":"LONGEWEAR LOVE!",
+        "jackets":"LIGHT JACKETS"
     }
 
 

@@ -35,6 +35,7 @@ import {
   Wrapper,
 } from "./Navbar.styled";
 import { Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -47,6 +48,8 @@ const Navbar = () => {
   const [openModalDelete, setOpenModalDelete] = React.useState(false);
 
   const [isEnglish, setLanguage] = useState(true);
+
+  const [t, i18n] = useTranslation("navbar");
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -85,9 +88,9 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  const handleChange = (e) => {
-    console.log(e.target);
+  const handleChangeLanguage = (e) => {
     setLanguage(!isEnglish);
+    i18n.changeLanguage(isEnglish ? "es" : "en");
   };
 
   return (
@@ -103,14 +106,14 @@ const Navbar = () => {
               defaultValue={isEnglish}
               inputProps={{ "aria-label": "ant design" }}
               value={isEnglish}
-              onChange={handleChange}
+              onChange={handleChangeLanguage}
             />
             <Typography>
               <ImageLanguage src="https://childhearingloss.files.wordpress.com/2020/08/spanish-icon.png?w=512" />
             </Typography>
           </Stack>
           <SearchContainer>
-            <Input placeholder="search" />
+            <Input placeholder={t("search")} />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
@@ -158,12 +161,12 @@ const Navbar = () => {
 
           {!user && (
             <MenuItem>
-              <Link to={"/register"}>REGISTER</Link>
+              <Link to={"/register"}>{t("register")}</Link>
             </MenuItem>
           )}
           {!user && (
             <MenuItem>
-              <Link to={"/login"}>LOGIN</Link>
+              <Link to={"/login"}>{t("login")}</Link>
             </MenuItem>
           )}
           <Link to={"/cart"}>

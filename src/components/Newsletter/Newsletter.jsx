@@ -8,14 +8,17 @@ import {
   InputContainer,
   Title,
 } from "./Newsletter.styled";
+import { useTranslation } from "react-i18next";
 
 const Newsletter = () => {
+  const [t] = useTranslation("homePage");
+
   return (
     <Container>
-      <Title>Newsletter</Title>
-      <Desc>Get timely updates from your favorite products.</Desc>
+      <Title>{t("newsletter.title")}</Title>
+      <Desc>{t("newsletter.text")}</Desc>
       <InputContainer>
-        <Input placeholder="Your email" />
+        <Input placeholder={t("newsletter.placeholder")} />
         <Button>
           <Send />
         </Button>

@@ -2,22 +2,22 @@ export const sliderItems = [
   {
     id: 1,
     img: "https://th.bing.com/th/id/R.be72e8c89cae6044296301f0eaf6549a?rik=GHxSupP7d5Kjlg&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fmodel-png-random-model-png-19-by-dreamervisen-738.png&ehk=Pet20POR9IpYR%2fF%2fwiFywRN3I9TrBXn90ksFyMtM4lc%3d&risl=&pid=ImgRaw&r=0",
-    title: "SUMMER SALE",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    title: "slider.first.title",
+    desc: "slider.first.desc",
     bg: "f5fafd",
   },
   {
     id: 2,
     img: "https://i.ibb.co/DG69bQ4/2.png",
-    title: "AUTUMN COLLECTION",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS. ",
+    title: "slider.second.title",
+    desc: "slider.second.desc",
     bg: "fcf1ed",
   },
   {
     id: 3,
     img: "https://orig00.deviantart.net/ee86/f/2016/080/1/f/9a1c23bbc397d809a558eff821b427dc_by_msoranzhevaya-d9vw66l.png",
-    title: "LONGEWEAR LOVE",
-    desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+    title: "slider.third.title",
+    desc: "slider.third.desc",
     bg: "fbf0f4",
   },
 ];
@@ -26,19 +26,19 @@ export const categories = [
   {
     id: 1,
     img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "SHIRT STYLE!",
+    title: "categories.shirt",
     cat: "shirt",
   },
   {
     id: 2,
     img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "LOUNGEWEAR LOVE",
+    title: "categories.longewear",
     cat: "longewear",
   },
   {
     id: 3,
     img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    title: "LIGHT JACKETS",
+    title: "categories.jackets",
     cat: "jacket",
   },
 ];

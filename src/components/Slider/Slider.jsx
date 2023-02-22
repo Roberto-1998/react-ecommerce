@@ -12,9 +12,11 @@ import {
   Title,
   Wrapper,
 } from "./Slider.styled";
+import { useTranslation } from "react-i18next";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [t] = useTranslation("homePage");
 
   const handleClick = (direction) => {
     if (direction === "left") {
@@ -38,8 +40,8 @@ const Slider = () => {
             </ImgContainer>
 
             <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
+              <Title>{t(`${item.title}`)}</Title>
+              <Desc>{t(`${item.desc}`)}</Desc>
             </InfoContainer>
           </Slide>
         ))}
