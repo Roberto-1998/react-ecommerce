@@ -1,0 +1,12 @@
+{
+    "create":"CREATE AN ACCOUNT",
+    "name":"Name",
+    "last":"Last Name",
+    "email":"Email",
+    "username":"Username",
+    "password":"Password",
+    "confirm":"Confirm Password",
+    "privacy":"By creating an account, I consent to the processing of my personal data in accordance with the ",
+    "policy":"PRIVACY POLICY",
+    "createBtn":"CREATE"
+}

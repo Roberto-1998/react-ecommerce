@@ -1,0 +1,12 @@
+{
+    "create":"CREA UNA CUENTA",
+    "name":"Nombre",
+    "last":"Apellidos",
+    "email":"Correo",
+    "username":"Usuario",
+    "password":"Contraseña",
+    "confirm":"Confirmar Contraseña",
+    "privacy":"Al crear una cuenta, doy mi consentimiento para el procesamiento de mis datos personales de acuerdo con la ",
+    "policy":"POLITICA DE PRIVACIDAD",
+    "createBtn":"CREAR"
+}

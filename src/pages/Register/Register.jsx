@@ -13,6 +13,7 @@ import {
   Title,
   Wrapper,
 } from "./Register.styled";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
   const {
@@ -24,6 +25,8 @@ const Register = () => {
   } = useCreateForm();
 
   const users = useSelector((state) => state.user.allUsers);
+
+  const [t] = useTranslation("register");
 
   const navigate = useNavigate();
 
@@ -54,54 +57,50 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
+        <Title>{t("create")}</Title>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputBox>
-            <Input placeholder="Name" {...register("name")} />
+            <Input placeholder={t("name")} {...register("name")} />
             {errors.name && <ErrorText>{errors.name.message}</ErrorText>}
           </InputBox>
 
           <InputBox>
-            <Input placeholder="Last Name" {...register("lastName")} />
+            <Input placeholder={t("last")} {...register("lastName")} />
             {errors.lastName && (
               <ErrorText>{errors.lastName.message}</ErrorText>
             )}
           </InputBox>
 
           <InputBox>
-            <Input placeholder="Email" {...register("email")} />
+            <Input placeholder={t("email")} {...register("email")} />
             {errors.email && <ErrorText>{errors.email.message}</ErrorText>}
           </InputBox>
 
           <InputBox>
-            <Input placeholder="Username" {...register("username")} />
+            <Input placeholder={t("username")} {...register("username")} />
             {errors.username && (
               <ErrorText>{errors.username.message}</ErrorText>
             )}
           </InputBox>
 
           <InputBox>
-            <Input placeholder="Password" {...register("passwordOne")} />
+            <Input placeholder={t("password")} {...register("passwordOne")} />
             {errors.passwordOne && (
               <ErrorText>{errors.passwordOne.message}</ErrorText>
             )}
           </InputBox>
 
           <InputBox>
-            <Input
-              placeholder="Confirm Password"
-              {...register("passwordTwo")}
-            />
+            <Input placeholder={t("confirm")} {...register("passwordTwo")} />
             {errors.passwordTwo && (
               <ErrorText>{errors.passwordTwo.message}</ErrorText>
             )}
           </InputBox>
 
           <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
+            {t("privacy")} <b>{t("policy")}</b>
           </Agreement>
-          <Button>CREATE</Button>
+          <Button>{t("createBtn")}</Button>
         </Form>
       </Wrapper>
     </Container>
