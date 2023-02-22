@@ -34,6 +34,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Paypal } from "../../components/Paypal";
 import { addProductAmount, removeProductAmount } from "../../redux/cartRedux";
 import { findProductById } from "../../utils/findProductById";
+import { useTranslation } from "react-i18next";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -41,6 +42,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [quantityValue, setQuantityValue] = useState(1);
+  const [t] = useTranslation("cart");
 
   const handleAddProduct = (id) => {
     let product = findProductById(id);
@@ -60,11 +62,9 @@ const Cart = () => {
     <Container isEmpty={!cart.products.length > 0}>
       {cart.products.length > 0 ? (
         <Wrapper>
-          <Title>YOUR BAG</Title>
+          <Title>{t("bagTitle")}</Title>
           <Top>
-            <TopButtom onClick={() => navigate("/")}>
-              CONTINUE SHOPPING
-            </TopButtom>
+            <TopButtom onClick={() => navigate("/")}>{t("shopBtn")}</TopButtom>
           </Top>
           <Bottom>
             <Info>
@@ -76,14 +76,14 @@ const Cart = () => {
                     </Link>
                     <Details>
                       <ProductName>
-                        <b>Product:</b> {product.title}
+                        <b>{t("product.product")}:</b> {product.title}
                       </ProductName>
                       <ProductId>
-                        <b>ID:</b> {product.id}
+                        <b>{t("product.id")}:</b> {product.id}
                       </ProductId>
                       <ProductColor color={product.color} />
                       <ProductSize>
-                        <b>Size: </b>
+                        <b>{t("product.size")}: </b>
                         {product.size}
                       </ProductSize>
                     </Details>
@@ -105,23 +105,23 @@ const Cart = () => {
             </Info>
 
             <Summary>
-              <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+              <SummaryTitle>{t("order.summary")}</SummaryTitle>
               <SummaryItems>
-                <SummaryItemText>Subtotal</SummaryItemText>
+                <SummaryItemText>{t("order.subtotal")}</SummaryItemText>
                 <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
               </SummaryItems>
               <SummaryItems>
-                <SummaryItemText>Estimated Shipping</SummaryItemText>
+                <SummaryItemText>{t("order.shipping")}</SummaryItemText>
                 <SummaryItemPrice>$ 5.90</SummaryItemPrice>
               </SummaryItems>
               {cart.total > 50 && (
                 <SummaryItems>
-                  <SummaryItemText>Shipping Discount</SummaryItemText>
+                  <SummaryItemText>{t("order.discount")}</SummaryItemText>
                   <SummaryItemPrice>$ -5.90</SummaryItemPrice>
                 </SummaryItems>
               )}
               <SummaryItems type="total">
-                <SummaryItemText>Total</SummaryItemText>
+                <SummaryItemText>{t("order.total")}</SummaryItemText>
                 <SummaryItemPrice>
                   $ {cart.total < 50 ? cart.total + 5.9 : cart.total}
                 </SummaryItemPrice>
@@ -133,14 +133,14 @@ const Cart = () => {
                 />
               ) : (
                 <LoginMessage>
-                  You should{" "}
+                  {t("order.paymentInitial")}{" "}
                   <Link to={"/login"}>
                     {" "}
                     <strong>
-                      <em>login</em>
+                      <em>{t("order.paymentLogin")}</em>
                     </strong>
                   </Link>{" "}
-                  to proceed with the payment.
+                  {t("order.paymentFinally")}
                 </LoginMessage>
               )}
             </Summary>
@@ -148,7 +148,7 @@ const Cart = () => {
         </Wrapper>
       ) : (
         <Wrapper>
-          <Title>YOUR BAG IS EMPTY</Title>
+          <Title>{t("empty")}</Title>
         </Wrapper>
       )}
     </Container>

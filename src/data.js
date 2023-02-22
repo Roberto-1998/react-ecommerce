@@ -18,7 +18,7 @@ export const sliderItems = [
     img: "https://orig00.deviantart.net/ee86/f/2016/080/1/f/9a1c23bbc397d809a558eff821b427dc_by_msoranzhevaya-d9vw66l.png",
     title: "slider.third.title",
     desc: "slider.third.desc",
-    bg: "fbf0f4",
+    bg: "529897",
   },
 ];
 
@@ -32,8 +32,8 @@ export const categories = [
   {
     id: 2,
     img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "categories.longewear",
-    cat: "longewear",
+    title: "categories.loungewear",
+    cat: "loungewear",
   },
   {
     id: 3,
@@ -46,25 +46,26 @@ export const categories = [
 export const footerList = [
   {
     text: "centerSide.home",
+    link: "/",
   },
-  {
-    text: "centerSide.cart",
-  },
+
   {
     text: "centerSide.jackets",
+    link: "/products/jacket",
   },
   {
     text: "centerSide.shirts",
+    link: "/products/shirt",
   },
   {
     text: "centerSide.loungewear",
+    link: "/products/loungewear",
+  },
+  {
+    text: "centerSide.cart",
+    link: "/cart",
   },
 ];
-
-export const filterProducts = {
-  color: ["white", "red", "blue", "yellow", "green"],
-  size: ["XS", "S", "M", "L", "XL"],
-};
 
 export const sortProducts = [
   {
@@ -102,7 +103,7 @@ export const popularProducts = [
     img: "https://th.bing.com/th/id/R.d1859b4fa598cd6480cbdb48283724fa?rik=WgkBVDGIhKERtg&riu=http%3a%2f%2fth04.deviantart.net%2ffs70%2fPRE%2fi%2f2013%2f223%2f5%2f6%2fbarbara_palvin_png_by_vs_angel-d6hnxxg.png&ehk=0jGFkBLy7Y0UjNlfkPRKTP5ShgY6xm1ZtXjTLFyyalo%3d&risl=&pid=ImgRaw&r=0",
     size: ["M", "L"],
     color: ["orange"],
-    cat: ["longewear"],
+    cat: ["loungewear"],
     title: "Laptop",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio. In pellentesque massa placerat duis ultricies. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.",
     price: 300,
@@ -189,8 +190,8 @@ export const products = [
     img: "https://th.bing.com/th/id/R.dfb7953720c081e785654aaf83daa0d3?rik=6Cr0X%2bFR0kdCRg&riu=http%3a%2f%2ffc07.deviantart.net%2ffs71%2ff%2f2013%2f189%2f0%2f7%2fmiranda_kerr_png_by_vs_angel-d6cihcl.png&ehk=JOHVDGsW4y%2b3hBxAk4C77Xqtbqj1oye2iYj0cMaW54M%3d&risl=&pid=ImgRaw&r=0",
     size: ["M", "L"],
     color: ["green"],
-    cat: ["longewear"],
-    title: "Green Longewear",
+    cat: ["loungewear"],
+    title: "Green loungewear",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio. In pellentesque massa placerat duis ultricies. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.Convallis aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Morbi non arcu risus quis varius quam quisque. Ut eu sem integer vitae justo eget magna fermentum. Ante in nibh mauris cursus mattis molestie a iaculis at.",
     price: 25,
     quantity: 5,
@@ -201,8 +202,8 @@ export const products = [
     img: "https://www.freepngimg.com/thumb/model/5-2-model-png.png",
     size: ["M", "L"],
     color: ["whitesmoke"],
-    cat: ["longewear"],
-    title: "White Longewear",
+    cat: ["loungewear"],
+    title: "White loungewear",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio. In pellentesque massa placerat duis ultricies. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.Convallis aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Morbi non arcu risus quis varius quam quisque. Ut eu sem integer vitae justo eget magna fermentum. Ante in nibh mauris cursus mattis molestie a iaculis at.",
     price: 30,
     quantity: 5,
@@ -213,8 +214,8 @@ export const products = [
     img: "https://th.bing.com/th/id/R.e6f5aaf33cd87c34f6a51a1d0e979c85?rik=MldIdFyke%2btbyQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fdress%2fdress_PNG109.png&ehk=YSukSYDyxHb5H%2buaDV%2fd1WgP3RIOfHCM6VCWAUeGWHI%3d&risl=&pid=ImgRaw&r=0",
     size: ["M", "L"],
     color: ["black"],
-    cat: ["longewear"],
-    title: "Suitable Longewear",
+    cat: ["loungewear"],
+    title: "Suitable loungewear",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio. In pellentesque massa placerat duis ultricies. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.Convallis aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Morbi non arcu risus quis varius quam quisque. Ut eu sem integer vitae justo eget magna fermentum. Ante in nibh mauris cursus mattis molestie a iaculis at.",
     price: 12,
     quantity: 5,
@@ -225,8 +226,8 @@ export const products = [
     img: "https://th.bing.com/th/id/R.d1859b4fa598cd6480cbdb48283724fa?rik=WgkBVDGIhKERtg&riu=http%3a%2f%2fth04.deviantart.net%2ffs70%2fPRE%2fi%2f2013%2f223%2f5%2f6%2fbarbara_palvin_png_by_vs_angel-d6hnxxg.png&ehk=0jGFkBLy7Y0UjNlfkPRKTP5ShgY6xm1ZtXjTLFyyalo%3d&risl=&pid=ImgRaw&r=0",
     size: ["M", "L"],
     color: ["orange"],
-    cat: ["longewear"],
-    title: "Orange Longewear",
+    cat: ["loungewear"],
+    title: "Orange loungewear",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio. In pellentesque massa placerat duis ultricies. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.Convallis aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Morbi non arcu risus quis varius quam quisque. Ut eu sem integer vitae justo eget magna fermentum. Ante in nibh mauris cursus mattis molestie a iaculis at.",
     price: 17,
     quantity: 5,
@@ -237,8 +238,8 @@ export const products = [
     img: "https://th.bing.com/th/id/R.13a61b1cde81f2d8bd5023f67a2c320d?rik=%2bsa7otlHSFs0OQ&riu=http%3a%2f%2fpngimg.com%2fuploads%2fdancer%2fdancer_PNG117.png&ehk=6whV8OTvJvt8a%2f5oBXpI4GMmv5EiduqevX8TcyXR3Sk%3d&risl=&pid=ImgRaw&r=0",
     size: ["M", "L"],
     color: ["black"],
-    cat: ["longewear"],
-    title: "Black Longewear",
+    cat: ["loungewear"],
+    title: "Black loungewear",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio. In pellentesque massa placerat duis ultricies. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.Convallis aenean et tortor at risus viverra. Integer feugiat scelerisque varius morbi enim nunc faucibus a. Morbi non arcu risus quis varius quam quisque. Ut eu sem integer vitae justo eget magna fermentum. Ante in nibh mauris cursus mattis molestie a iaculis at.",
     price: 20,
     quantity: 5,

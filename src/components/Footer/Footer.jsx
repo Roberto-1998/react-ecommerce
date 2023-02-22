@@ -25,6 +25,7 @@ import {
   Title,
 } from "./Footer.styled";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [t] = useTranslation("footer");
@@ -58,7 +59,10 @@ const Footer = () => {
 
         <List>
           {footerList.map((item) => (
-            <ListItem key={item.text}>{t(`${item.text}`)}</ListItem>
+            <ListItem key={item.text}>
+              {" "}
+              <Link to={item.link}> {t(`${item.text}`)}</Link>
+            </ListItem>
           ))}
         </List>
       </Center>

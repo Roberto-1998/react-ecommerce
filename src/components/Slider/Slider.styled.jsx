@@ -17,6 +17,7 @@ export const Arrow = styled.div`
   height: 50px;
   background-color: #fff7f7;
   border-radius: 50%;
+  box-shadow: 1px 1px 8px black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +53,8 @@ export const Slide = styled.div`
 `;
 
 export const ImgContainer = styled.div`
+  margin-top: 120px;
+  padding-left: 50px;
   height: 100%;
   flex: 1;
 `;

@@ -1,0 +1,20 @@
+{
+    "empty":"TU BOLSA ESTA VACIA",
+    "bagTitle":"TU BOLSA",
+    "shopBtn":"SIGUE COMPRANDO",
+    "product":{
+        "product":"Producto",
+        "id":"ID",
+        "size":"Talla"
+    },
+    "order":{
+        "summary":"RESUMEN DE LA ORDEN",
+        "subtotal":"Subtotal",
+        "shipping":"ENTREGA ESTIMADA",
+        "discount":"DESCUENTO DE ENVIO",
+        "total":"Total",
+        "paymentInitial":"Deberías",
+        "paymentLogin":"iniciar sesión",
+        "paymentFinally":"para proceder con el pago."
+    }
+}

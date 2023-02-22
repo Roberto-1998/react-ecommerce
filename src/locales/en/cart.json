@@ -1,0 +1,20 @@
+{
+    "empty":"YOUR BAG IS EMPTY",
+    "bagTitle":"YOUR BAG",
+    "shopBtn":"CONTINUE SHOPPING",
+    "product":{
+        "product":"Product",
+        "id":"ID",
+        "size":"Size"
+    },
+    "order":{
+        "summary":"ORDER SUMMARY",
+        "subtotal":"Subtotal",
+        "shipping":"Estimated Shipping",
+        "discount":"Shipping Discount",
+        "total":"Total",
+        "paymentInitial":"You should",
+        "paymentLogin":"login",
+        "paymentFinally":"to proceed with the payment."
+    }
+}
