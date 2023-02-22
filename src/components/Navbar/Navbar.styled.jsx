@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { mobile } from "../../responsive";
 import { Link as LinkReact } from "react-router-dom";
+import { Switch, styled as styledM } from "@mui/material";
 
 export const Container = styled.div`
   height: 60px;
@@ -102,3 +103,48 @@ export const UserName = styled.span`
   margin-left: 10px;
   font-weight: bold;
 `;
+
+export const ImageLanguage = styled.img`
+  width: 22px;
+`;
+
+export const AntSwitch = styledM(Switch)(({ theme }) => ({
+  width: 28,
+  height: 16,
+  padding: 0,
+  display: "flex",
+  "&:active": {
+    "& .MuiSwitch-thumb": {
+      width: 15,
+    },
+    "& .MuiSwitch-switchBase.Mui-checked": {
+      transform: "translateX(9px)",
+    },
+  },
+  "& .MuiSwitch-switchBase": {
+    padding: 2,
+    "&.Mui-checked": {
+      transform: "translateX(12px)",
+      color: "#fff",
+      "& + .MuiSwitch-track": {
+        opacity: 1,
+        backgroundColor: theme.palette.mode === "dark" ? "#ffcf33" : "#ffcf33",
+      },
+    },
+  },
+  "& .MuiSwitch-thumb": {
+    boxShadow: "0 2px 4px 0 rgb(0 35 11 / 20%)",
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    transition: theme.transitions.create(["width"], {
+      duration: 200,
+    }),
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 16 / 2,
+    opacity: 1,
+    backgroundColor: theme.palette.mode === "dark" ? "#445F9F" : "#445F9F",
+    boxSizing: "border-box",
+  },
+}));

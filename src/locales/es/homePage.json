@@ -1,0 +1,20 @@
+{
+
+    "slider":{
+        "first":{
+            "title":"REBAJAS DE VERANO",
+            "desc":"¡NO COMPROMETAS EL ESTILO! OBTENGA UN 30% DE DESCUENTO PARA LOS RECIÉN LLEGADOS."
+        },
+        "second":{
+            "title":"COLECCIÓN DE OTOÑO",
+            "desc":"¡NO COMPROMETAS EL ESTILO! OBTENGA UN 30% DE DESCUENTO PARA LOS RECIÉN LLEGADOS."
+        },
+        "third":{
+            "title":"AMOR LONGEWEAR",
+            "desc":"¡NO COMPROMETAS EL ESTILO! OBTENGA UN 30% DE DESCUENTO PARA LOS RECIÉN LLEGADOS."
+        }
+    }
+
+
+
+}

@@ -3,7 +3,7 @@ import {
   Search,
   ShoppingCartOutlined,
 } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "@material-ui/core";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -19,10 +19,11 @@ import MenuItemMat from "@mui/material/MenuItem";
 import { deleteAccount, logout } from "../../redux/userRedux";
 
 import {
+  AntSwitch,
   Center,
   Container,
+  ImageLanguage,
   Input,
-  Language,
   Left,
   Link,
   Logo,
@@ -33,6 +34,7 @@ import {
   UserName,
   Wrapper,
 } from "./Navbar.styled";
+import { Stack, Typography } from "@mui/material";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -43,6 +45,8 @@ const Navbar = () => {
   const open = Boolean(anchorEl);
   const [openModalLogout, setOpenModalLogout] = React.useState(false);
   const [openModalDelete, setOpenModalDelete] = React.useState(false);
+
+  const [isEnglish, setLanguage] = useState(true);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -81,11 +85,30 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handleChange = (e) => {
+    console.log(e.target);
+    setLanguage(!isEnglish);
+  };
+
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          {/* <Language>EN</Language> */}
+          <Stack direction="row" spacing={1} alignItems="center">
+            <Typography>
+              <ImageLanguage src="https://icon-library.com/images/icon-english/icon-english-2.jpg" />
+            </Typography>
+            <AntSwitch
+              defaultValue={isEnglish}
+              inputProps={{ "aria-label": "ant design" }}
+              value={isEnglish}
+              onChange={handleChange}
+            />
+            <Typography>
+              <ImageLanguage src="https://childhearingloss.files.wordpress.com/2020/08/spanish-icon.png?w=512" />
+            </Typography>
+          </Stack>
           <SearchContainer>
             <Input placeholder="search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
