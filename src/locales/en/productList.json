@@ -3,10 +3,30 @@
     "color":"Choose color",
     "size":"Choose size",
     "sort":"Sort Products",
-  
         "Shirt":"Shirts",
         "Jackets":"Jackets",
-        "Loungewear":"Loungewears"
+        "Loungewear":"Loungewears",
+    
+    "products":{
+        "colors":{
+            "brown":"Brown",
+            "pink":"Pink",
+            "gray":"Gray",
+            "black":"Black",
+            "green":"Green",
+            "whitesmoke":"Whitesmoke",
+            "orange":"Orange",
+            "yellow":"Yellow"
+        }
+    },
+
+    "sortWays":{
+        "newest":"Newest",
+        "asc":"Price asc",
+        "desc":"Price desc"
+    }
+
+    
     
 
 }

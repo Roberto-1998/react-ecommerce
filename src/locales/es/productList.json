@@ -4,10 +4,29 @@
         "color":"Elige un color",
         "size":"Elige una talla",
         "sort":"Ordenar Productos",
-       
-            "Shirt":"Camisas",
-            "Jackets":"Chaquetas",
-            "Loungewear":"Ropas de salón"
+        "Shirt":"Camisas",
+        "Jackets":"Chaquetas",
+        "Loungewear":"Ropas de salón",
+
+        "products":{
+            "colors":{
+                "brown":"Marrón",
+                "pink":"Rosado",
+                "gray":"Gris",
+                "black":"Negro",
+                "green":"Verde",
+                "whitesmoke":"Blanco",
+                "orange":"Naranja",
+                "yellow":"Amarillo"
+            }
+        },
+
+        "sortWays":{
+            "newest":"Nuevos",
+            "asc":"Precio asc",
+            "desc":"Precio desc"
+        }
+
         
     
     

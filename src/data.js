@@ -70,17 +70,15 @@ export const footerList = [
 export const sortProducts = [
   {
     id: 1,
-    text: "Newest",
+
     value: "newest",
   },
   {
     id: 2,
-    text: "Price asc",
     value: "asc",
   },
   {
     id: 3,
-    text: "Price desc",
     value: "desc",
   },
 ];

@@ -43,7 +43,7 @@ const ProductList = () => {
               </Option>
               {getColors().map((item) => (
                 <Option key={item} value={item}>
-                  {item}
+                  {t(`products.colors.${item}`)}
                 </Option>
               ))}
             </Select>
@@ -63,7 +63,7 @@ const ProductList = () => {
             <Select onChange={(e) => setSort(e.target.value)}>
               {sortProducts.map((item) => (
                 <Option key={item.id} value={item.value}>
-                  {item.text}
+                  {t(`sortWays.${item.value}`)}
                 </Option>
               ))}
             </Select>
