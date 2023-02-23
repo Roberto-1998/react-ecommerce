@@ -11,6 +11,7 @@ import styled from "styled-components";
 
 const MainContainer = styled.main`
   min-height: 50vh;
+  margin-top: 120px;
 `;
 
 const Layout = () => {

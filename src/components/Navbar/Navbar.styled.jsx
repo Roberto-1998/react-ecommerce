@@ -4,14 +4,24 @@ import { Link as LinkReact } from "react-router-dom";
 import { Switch, styled as styledM } from "@mui/material";
 
 export const Container = styled.div`
+  z-index: 999;
   height: 60px;
   margin-bottom: 20px;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: white;
   ${mobile({
     height: "50px",
   })}
 `;
 
 export const Wrapper = styled.div`
+  width: 100%;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
