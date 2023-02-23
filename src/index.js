@@ -14,6 +14,7 @@ import * as EN from "./locales/en";
 
 import i18next from "i18next";
 import { I18nextProvider } from "react-i18next";
+import { ScrollToTop } from "./helpers/ScrollToTop";
 
 i18next.init({
   interpolation: { escapeValue: false },
@@ -31,6 +32,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <Router>
           <I18nextProvider i18n={i18next}>
+            <ScrollToTop />
             <App />
           </I18nextProvider>
         </Router>
