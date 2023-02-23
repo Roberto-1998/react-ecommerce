@@ -24,9 +24,11 @@ import {
   Title,
   Wrapper,
 } from "./Product.styled";
+import { useTranslation } from "react-i18next";
 
 const Product = () => {
   const cart = useSelector((state) => state.cart);
+  const [t] = useTranslation("productPage");
 
   const { id } = useParams();
   const product = findProductById(id);
@@ -99,12 +101,12 @@ const Product = () => {
               ))}
             </Filter>
             <Filter>
-              <FilterTitle>Size</FilterTitle>
+              <FilterTitle>{t("size")}</FilterTitle>
               <FilterSize
                 onChange={(e) => setSizeValue(e.target.value)}
                 ref={ref}
               >
-                <FilterSizeOption value="">Select Size</FilterSizeOption>
+                <FilterSizeOption value="">{t("sizeChoose")}</FilterSizeOption>
                 {size.map((item) => (
                   <FilterSizeOption key={item} value={item}>
                     {item}
@@ -119,7 +121,7 @@ const Product = () => {
               <Amount>{quantityValue}</Amount>
               <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button onClick={() => handleClick(id)}>ADD TO CART</Button>
+            <Button onClick={() => handleClick(id)}>{t("addCart")}</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
