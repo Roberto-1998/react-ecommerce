@@ -16,5 +16,6 @@
         "paymentInitial":"You should",
         "paymentLogin":"login",
         "paymentFinally":"to proceed with the payment."
-    }
+    },
+    "added":"Added to cart!"
 }

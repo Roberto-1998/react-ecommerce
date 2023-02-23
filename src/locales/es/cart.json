@@ -16,5 +16,7 @@
         "paymentInitial":"Deberías",
         "paymentLogin":"iniciar sesión",
         "paymentFinally":"para proceder con el pago."
-    }
+    },
+    "added":"Añadido al carrito!"
+
 }

@@ -25,10 +25,11 @@ import {
   Wrapper,
 } from "./Product.styled";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
 
 const Product = () => {
   const cart = useSelector((state) => state.cart);
-  const [t] = useTranslation("productPage");
+  const [t] = useTranslation(["productPage", "cart"]);
 
   const { id } = useParams();
   const product = findProductById(id);
@@ -37,6 +38,8 @@ const Product = () => {
   const [sizeValue, setSizeValue] = useState("");
   const dispatch = useDispatch();
   const ref = useRef(null);
+
+  const notify = () => toast.success(t("added", { ns: "cart" }));
 
   const handleQuantity = (type) => {
     if (type === "dec" && quantityValue > 1) {
@@ -53,8 +56,6 @@ const Product = () => {
       ref.current.focus();
       return;
     }
-
-    console.log(cart);
 
     let productExists = cart.products.find((prod) => prod.id === Number(id));
 
@@ -81,6 +82,7 @@ const Product = () => {
         })
       );
     }
+    notify();
   };
 
   return (
@@ -125,6 +127,11 @@ const Product = () => {
           </AddContainer>
         </InfoContainer>
       </Wrapper>
+      <ToastContainer
+        position="top-center"
+        hideProgressBar={true}
+        autoClose={2000}
+      />
     </Container>
   );
 };

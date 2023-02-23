@@ -7,6 +7,7 @@ import { persistor, store } from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
+import "react-toastify/dist/ReactToastify.css";
 
 import * as ES from "./locales/es";
 import * as EN from "./locales/en";
