@@ -36,6 +36,7 @@ import {
 } from "./Navbar.styled";
 import { Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { SwitchTheme } from "../SwitchTheme";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -97,7 +98,6 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left>
-          {/* <Language>EN</Language> */}
           <Stack direction="row" spacing={1} alignItems="center">
             <Typography>
               <ImageLanguage src="https://icon-library.com/images/icon-english/icon-english-2.jpg" />
@@ -169,13 +169,15 @@ const Navbar = () => {
               <Link to={"/login"}>{t("login")}</Link>
             </MenuItem>
           )}
-          <Link to={"/cart"}>
-            <MenuItem>
+
+          <MenuItem>
+            <SwitchTheme />
+            <Link to={"/cart"}>
               <Badge badgeContent={quantity} color="primary">
                 <ShoppingCartOutlined color="action" />
               </Badge>
-            </MenuItem>
-          </Link>
+            </Link>
+          </MenuItem>
         </Right>
       </Wrapper>
       <Dialog
